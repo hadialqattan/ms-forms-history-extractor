@@ -5,6 +5,7 @@ import json
 import os
 
 MILLION = 10 ** 6
+ENCODING = "utf-8"
 SEMESTER_BEGINNING_TIMESTAMP_MICROSECONDS = (
     dt.strptime("2021-01-17", "%Y-%m-%d").timestamp() * MILLION
 )
@@ -15,7 +16,7 @@ while True:
     except KeyboardInterrupt:
         print("\n\nBye bye!")
     try:
-        with open(FILE_PATH, "r") as f:
+        with open(FILE_PATH, "r", encoding=ENCODING) as f:
             data = json.loads(f.read())
         break
     except FileNotFoundError as err:
@@ -117,7 +118,7 @@ html_tr: str = """<tr>
 </tr>
 """
 INDEX_PATH = os.path.abspath("./webview/index.html")
-with open(INDEX_PATH, "w+") as index_html:
+with open(INDEX_PATH, "w+", encoding=ENCODING) as index_html:
     table_rows: str = "\n"
     for d in ms_forms:
         table_rows += html_tr.format(
