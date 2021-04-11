@@ -1,1 +1,4 @@
-webview/* linguist-vendored
+webview/css/* linguist-vendored
+webview/js/* linguist-vendored
+webview/fonts/font-awesome-4.7.0/less/* linguist-vendored
+webview/fonts/font-awesome-4.7.0/scss/* linguist-vendored
