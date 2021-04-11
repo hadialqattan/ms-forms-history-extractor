@@ -1,7 +1,14 @@
 # Microsoft Forms Extractor
 
-A Python script to extract Microsoft Forms URLs from Google `BrowserHistory.json` takeout.
+Python script to extract Microsoft Forms URLs from Google `BrowserHistory.json` takeout!
+
+## Installation
+
+For Windows [ms-forms-history-extractor.zip]().
 
 ## Usage
 
-Run the `main.py` script then open `webview/index.html` using any browser, and Voilà! You've got your Forms data in a beautiful html page!
+- Get your Chrome history from: https://takeout.google.com/
+- Run `main.py` script then open `webview/index.html` using any browser.
+
+Voilà! You've got your Microsoft Forms urls in a beautiful html page!
