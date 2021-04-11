@@ -18,11 +18,14 @@ jobs:
       - name: Build
         shell: pwsh
         run: |
-          .\build.ps1
+          .\build.ps1 CI
 
       - name: Archive Windows artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: dist-without-markdown
+          name: ms-forms-history-extractor
           path: |
-            .\ms-forms-history-extractor.zip
+            .\run.exe
+            .\webview\
+            .\LICENSE
+            .\README.md
