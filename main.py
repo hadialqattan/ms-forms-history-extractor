@@ -55,7 +55,7 @@ html: str = """<!DOCTYPE html>
 	<title>Your Forms</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -73,7 +73,7 @@ html: str = """<!DOCTYPE html>
 <!--===============================================================================================-->
 </head>
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -95,7 +95,7 @@ html: str = """<!DOCTYPE html>
 		</div>
 	</div>
 
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
@@ -125,4 +125,6 @@ with open(INDEX_PATH, "w+") as index_html:
         )
     index_html.write(html.format(table_rows=table_rows))
 
-print(f"Please open this file using any browser:\n{INDEX_PATH}")
+print(f"\nPlease open this file using any browser:\n{INDEX_PATH}")
+
+input("\npress any key to exit...")
