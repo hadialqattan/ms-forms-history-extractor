@@ -14,3 +14,5 @@ For Windows you can downlaod `ms-forms-history-extractor.zip` from the latest [w
 - Run `main.py` script then open `webview/index.html` using any browser.
 
 Voilà! You've got your urls in a beautiful html page!
+
+![image](https://user-images.githubusercontent.com/50833881/114320944-26ac8a80-9b21-11eb-9624-823a28b30093.png)
