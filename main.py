@@ -6,9 +6,6 @@ import os
 
 MILLION = 10 ** 6
 ENCODING = "utf-8"
-SEMESTER_BEGINNING_TIMESTAMP_MICROSECONDS = (
-    dt.strptime("2021-01-17", "%Y-%m-%d").timestamp() * MILLION
-)
 
 while True:
     try:
@@ -25,23 +22,20 @@ while True:
 try:
     ms_forms, ids, internal_id = [], set(), 1
     for d in data["Browser History"]:
-        if d["time_usec"] > SEMESTER_BEGINNING_TIMESTAMP_MICROSECONDS:
-            if "https://forms.office.com/pages/responsepage" in d["url"].lower():
-                url_id = parse_qs(urlparse(d["url"]).query)["id"][0]
-                if url_id not in ids:
-                    date = dt.fromtimestamp(d["time_usec"] / MILLION).strftime(
-                        "%Y-%m-%d"
-                    )
-                    ms_forms.append(
-                        {
-                            "id": internal_id,
-                            "form_id": url_id,
-                            "url": d["url"],
-                            "date": str(date),
-                        }
-                    )
-                    ids.add(url_id)
-                    internal_id += 1
+        if "https://forms.office.com/pages/responsepage" in d["url"].lower():
+            url_id = parse_qs(urlparse(d["url"]).query)["id"][0]
+            if url_id not in ids:
+                date = dt.fromtimestamp(d["time_usec"] / MILLION).strftime("%Y-%m-%d")
+                ms_forms.append(
+                    {
+                        "id": internal_id,
+                        "form_id": url_id,
+                        "url": d["url"],
+                        "date": str(date),
+                    }
+                )
+                ids.add(url_id)
+                internal_id += 1
 except KeyError as err:
     print(
         f"Invalid `BrowserHistory.json` file, "
