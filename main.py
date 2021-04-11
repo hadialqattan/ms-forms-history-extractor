@@ -42,6 +42,7 @@ except KeyError as err:
         "make sure you got this file from https://takeout.google.com/ correctly!"
     )
     print(traceback.print_exc())
+    exit(1)
 
 
 html: str = """<!DOCTYPE html>
