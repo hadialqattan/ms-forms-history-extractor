@@ -1,4 +1,4 @@
-# Microsoft Forms Extractor
+# Microsoft Forms Extractor - Archived -
 
 [![Windows Build](https://github.com/hadialqattan/ms-forms-history-extractor/actions/workflows/win-build.yml/badge.svg)](https://github.com/hadialqattan/ms-forms-history-extractor/actions/workflows/win-build.yml)
 
